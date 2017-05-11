@@ -32,6 +32,11 @@
 				console.log(newData);
 			})
 
+			$scope.reset = function(){
+				$scope.selectedStatus = undefined;
+				$scope.selectedCondition = undefined;
+			}
+
 	}])
 		.filter('unique', function() {
 			return function(collection, keyname) {
@@ -50,3 +55,4 @@
 			};
 		});;
 })();
+
