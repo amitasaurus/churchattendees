@@ -17,28 +17,33 @@
 
 <body ng-cloak ng-controller="mainCtrl">
 
-<div class="nav">
-  <label>Select a Prospect Status : </label>
-  <select class="custom-select" 
-          ng-model="selectedStatus">
-    <option value="undefined" selected>Select a Status </option>
+  <nav class="navbar fixed-top navbar-light bg-faded nav-custom">
+  <form class="form-inline">
+  <label class="mr-sm-2" for="inlineFormCustomSelect">Prospect Status</label>
+  <!-- status -->
+  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect" ng-model="selectedStatus">
+    <option value="undefined" selected>Status </option>
     <option ng-repeat="user in userData | unique : 'prospect_status'" value="{{user.prospect_status}}" >{{user.prospect_status}}</option>
   </select>
-  <label>Select a Spiritual Condition : </label>
-  <select class="custom-select" 
-          ng-model="selectedCondition">
-    <option value="undefined" selected>Select a Condition </option>
+  <!-- condition -->
+  <label class="mr-sm-2" for="inlineFormCustomSelect">Spiritual Condition</label>
+  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect" ng-model="selectedCondition">
+    <option value="undefined" selected>Condition </option>
     <option ng-repeat="user in userData | unique : 'spiritual_condition'" value="{{user.spiritual_condition}}" >{{user.spiritual_condition}}</option>
   </select>
-</div>
-<div map-lazy-load="url" id="map">
+
+  <button type="submit" class="btn btn-warning" ng-click="reset()">Reset</button>
+</form>
+</nav>
+
+ <div map-lazy-load="url" id="map">
   <ng-map center="{{center}}" 
           zoom="{{zoom}}" 
           default-style="false"  
           map-type-control="true"
           map-type-control-options="{style:'DROPDOWN_MENU'}"
           >
-    <marker ng-repeat="user in userData track by user._id.$oid " 
+    <marker ng-repeat="user in userData track by user._id.$oid" 
             position="{{user.latitude}},{{user.longitude}}"
             on-click="showInfo(user)"
             icon="church.png"
@@ -46,9 +51,10 @@
             ng-if="selectedStatus === user.prospect_status || selectedCondition === user.spiritual_condition"></marker>
     <info-window id="info-window">
         <div ng-non-bindable="">
-         <h1 class="display-4"> {{currentUser.first_name}}</h1>
+          <h1 class="custom-heading"><strong>{{currentUser.first_name}}</strong></h1>
           <h6>Gender : {{currentUser.gender}}</h6>
           <h6>Age : {{currentUser.age}}</h6>
+          <p class="h6">Address : {{currentUser.address[0].street_no}}, {{currentUser.address[0].town}}</p>
         </div>
     </info-window>
   </ng-map>
@@ -61,7 +67,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.19/angular.min.js"></script>
   <!-- maps -->
   <script src="js/ng-map.min.js"></script>
-  <script src="http://maps.google.com/maps/api/js?key=AIzaSyCeMtRT_fBBA4yc30iUceTyL4rSFNgf2Pc
+  <script src="https://maps.google.com/maps/api/js?key=AIzaSyCeMtRT_fBBA4yc30iUceTyL4rSFNgf2Pc
 "></script>
   <!-- custom scripts -->
   <script src="js/app.js"></script>
