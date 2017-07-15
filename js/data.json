@@ -97,54 +97,6 @@
     },
     {
         "_id": {
-            "$oid": "58f7e3a921e6362565400914"
-        },
-        "country_code": 0,
-        "first_name": "Monica",
-        "mobile": 0,
-        "home_tele": 0,
-        "gender": "female",
-        "age": 27,
-        "martial_status": "single",
-        "date_of_contact": "24/02/2017",
-        "spiritual_condition": "Baptism",
-        "prospect_status": "Active",
-        "language": "English",
-        "notes": "",
-        "_jsonobjid": "prospect",
-        "street_id": "58f7dc4821e636253e140a82",
-        "church_id": "58f092be734d1d2fc38ee225",
-        "last_name": "Valluri",
-        "point_of_contact": "Door Knocking",
-        "visit_status": "Visited",
-        "email": "monica.valluri@gmail.com",
-        "house_name": "",
-        "latitude": 34.696671,
-        "longitude": -118.09582,
-        "house_no": 1832,
-        "flat_no": 0,
-        "gospellers_email": [
-            "ensignweb@gmail.com"
-        ],
-        "address": [
-            {
-                "_id": {
-                    "$oid": "58f7dc4821e636253e140a82"
-                },
-                "street_id": "58f7dc4821e636253e140a82",
-                "church_id": "58f092be734d1d2fc38ee225",
-                "street_no": "E Lingard St",
-                "town": "Lancaster",
-                "country": "United States",
-                "zipcode": "93535",
-                "locality": "Tierra Bonita",
-                "state": "CA",
-                "_jsonobjid": "address"
-            }
-        ]
-    },
-    {
-        "_id": {
             "$oid": "59072c3121e6360989190ee9"
         },
         "country_code": 0,
